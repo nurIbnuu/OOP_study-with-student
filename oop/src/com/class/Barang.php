@@ -56,9 +56,41 @@ class Barang
 
   public function cetakInfoBarang() : void
   {
-    echo "Nama Barang : {$this->namaBarang}\nHarga Barang : Rp. {$this->hargaBarang},00\nStok Barang : {$this->stokBarang} pcs\n";
+    echo "Nama Barang : {$this->namaBarang}\nHarga Barang : Rp. {$this->hargaBarang},00\nStok Barang : {$this->stokBarang} pcs\n\n";
   }
 
+    // Method Setter; tidak mengembalikan nilai/void karena hanya mengeset data
+  public function setNamaBarang(string $namaBarang) : void
+  {
+    $this->namaBarang = $namaBarang;
+  }
+
+  public function setHargaBarang(int $hargaBarang) : void
+  {
+    $this->hargaBarang = $hargaBarang;
+  }
+
+  public function setStokBarang(int $stokBarang) : void
+  {
+    $this->stokBarang = $stokBarang;
+  }
+
+
+    // Method Getter; mengembalikan nilai/return
+  public function getNamaBarang() : string
+  {
+    return $this->namaBarang;
+  }
+
+  public function getHargaBarang() : int
+  {
+    return $this->hargaBarang;
+  }
+
+  public function getStokBarang() : int
+  {
+    return $this->stokBarang;
+  }
 
 
 
