@@ -5,12 +5,29 @@
 // class Barang
 class Barang
 {
-  // Property/Attribute
-  public  $namaBarang,
-  $hargaBarang,
-  $stokBarang;
+    // Property/Attribute
+    // Property dulu baru Method
+  public  $namaBarang, # = 'Tidak ada nama',
+          $hargaBarang, # = 0,
+          $stokBarang; # = 0;
 
-  // Method/Behavior
+    // Method/Behavior
+
+    // Constructor
+  public function __construct(string $inputNama = 'Tidak ada nama', int $inputHarga = 0, int $inputStok = 0)
+  {
+    // echo "Berhasil instansiasi Object Barang\n";
+    $this->namaBarang = $inputNama;
+    $this->hargaBarang = $inputHarga;
+    $this->stokBarang = $inputStok;
+  }
+
+    // Destructor; pasti tampil terakhir, dilakukan sebelum program selesai
+  // public function __destruct()
+  // {
+  //   // echo "Terima Kasih. Program selesai\n";
+  // }
+
   public function tambahStok(int $jmlTambah) : void
   {
   $this->stokBarang += $jmlTambah;
@@ -47,7 +64,7 @@ class Barang
 
   /* public function salam()
   {
-    echo 'Sudah berhasil instansiasi dari class barang';
+    echo 'Sudah berhasil instansiasi dari class Barang';
   } */
 
 }
