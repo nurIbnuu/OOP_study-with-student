@@ -5,9 +5,9 @@ require_once 'Barang.php';
 class Keyboard extends Barang
 {
   // Property
-  public  $backlight = 'Tidak ada backlight',
-          $banyakKeys = 0,
-          $tipeSwitch = 'Tidak ada switch';
+  private   $backlight = 'Tidak ada backlight',
+            $banyakKeys = 0,
+            $tipeSwitch = 'Tidak ada switch';
 
   // Method Construct
   public function __construct(string $namaBarang, int $hargaBarang, int $stokBarang, string $backlight, int $banyakKeys, string $tipeSwitch)
@@ -23,9 +23,17 @@ class Keyboard extends Barang
   }
 
   // Method Setter & Getter
+
+  // public function Set($namaBarang)
+  // {
+  //   $this->namaBarang = $namaBarang;
+  // }
   public function setBacklight(string $backlight) : void
   {
     $this->backlight = $backlight;
+      // public juga bisa diakses dari class turunannya
+    // $this->namaBarang = 'Teh';
+    // $this->tambahStok();
   }
   public function getBacklight() : string
   {

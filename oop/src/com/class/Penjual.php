@@ -3,10 +3,10 @@
 class Penjual
 {
   // Property
-  public  $nama,
-          $umur,
-          $jenisKelamin,
-          $lamaKerjaPerTahun;
+  private   $nama,
+            $umur,
+            $jenisKelamin,
+            $lamaKerjaPerTahun;
 
   // Method
   // Constructor

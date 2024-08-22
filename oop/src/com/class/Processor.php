@@ -5,8 +5,8 @@ require_once 'Barang.php';
 class Processor extends Barang
 {
   // Property
-  public  $frekuensiDasar = 0,
-          $turboBoost = 0;
+  private   $frekuensiDasar = 0,
+            $turboBoost = 0;
 
 
   // Method Construct

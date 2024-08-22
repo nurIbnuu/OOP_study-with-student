@@ -126,11 +126,30 @@ require_once '../class/Processor.php';
 $key1 = new Keyboard('Vortex Seies VX7', 1_000_000, 97, 'RGB', 87, 'Outemu Blue');
 $key2 = new Keyboard('Keychron K2', 1_200_000, 27, 'RGB', 84, 'Gateron Brown');
 $key3 = new Keyboard('Rexus Daxa M84 Pro', 1_500_000, 11, 'RGB', 97, 'Gateron Red');
-$key1->cetakInfoBarang(); # Nama Barang : Vortex Seies VX7. Harga Barang : Rp. 1000000,00. Stok Barang : 97 pcs.
-$key2->cetakInfoBarang(); # Nama Barang : Keychron K2. Harga Barang : Rp. 1200000,00. Stok Barang : 27 pcs.
-$key3->cetakInfoBarang(); # Nama Barang : Rexus Daxa M84 Pro. Harga Barang : Rp. 1500000,00. Stok Barang : 11 pcs.
+// $key1->cetakInfoBarang(); # Nama Barang : Vortex Seies VX7. Harga Barang : Rp. 1000000,00. Stok Barang : 97 pcs.
+// $key2->cetakInfoBarang(); # Nama Barang : Keychron K2. Harga Barang : Rp. 1200000,00. Stok Barang : 27 pcs.
+// $key3->cetakInfoBarang(); # Nama Barang : Rexus Daxa M84 Pro. Harga Barang : Rp. 1500000,00. Stok Barang : 11 pcs.
 
 $proc1 = new Processor('AMD Ryzen 5 3600', 3_000_000, 24, 3.6, 4.2);
 $proc2 = new Processor('Intel Core i5 10400', 2_400_000, 15, 2.9, 4.3);
-$proc1->cetakInfoBarang(); # Nama Barang : AMD Ryzen 5 3600. Harga Barang : Rp. 3000000,00. Stok Barang : 24 pcs.
-$proc2->cetakInfoBarang(); # Nama Barang : Intel Core i5 10400. Harga Barang : Rp. 2400000,00. Stok Barang : 15 pcs.
+// $proc1->cetakInfoBarang(); # Nama Barang : AMD Ryzen 5 3600. Harga Barang : Rp. 3000000,00. Stok Barang : 24 pcs.
+// $proc2->cetakInfoBarang(); # Nama Barang : Intel Core i5 10400. Harga Barang : Rp. 2400000,00. Stok Barang : 15 pcs.
+
+
+
+
+
+      /* Acces Modifier/Encapsulation/Visibility */
+// $brg1 = new Barang('Kopi', 12_000, 22);
+// Bisa diakses dari luar (public)
+// $brg1->hargaBarang = 1_200;
+// $brg1->tambahStok(2);
+// echo $brg1->hargaBarang;
+
+
+// Semua Property harus private; agar 1. aman, 2. Setter & Getter berguna
+// $key1->namaBarang = 'Kopi'; // tidak bisa karena sudah private
+// $key1->setNamaBarang('Kopi'); // bisa, nah sekarang Setter jadi lebih berguna
+
+// Jika kelas Barang(induk) tidak akan diinstansiasi maka jadikan 'protected'
+// $key1->Set('Kopi');

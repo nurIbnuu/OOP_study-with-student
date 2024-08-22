@@ -3,11 +3,11 @@
 class Pembeli
 {
   // Property
-  public  $nama,
-          $umur,
-          $jenisKelamin,
-          $noTelp,
-          $alamat;
+  private   $nama,
+            $umur,
+            $jenisKelamin,
+            $noTelp,
+            $alamat;
 
   // Method
   // Constructor
