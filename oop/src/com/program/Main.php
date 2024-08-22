@@ -14,13 +14,18 @@ require_once '../class/Processor.php';
 
 
   // Instansiasi objek dari class Barang
+        /* Constructor & Destructor */
 // $barang1 = new Barang('Shampoo', 7_000, 100);
 // // $barang1->cetakInfoBarang();
+
+
+        /* Property & Method */ 
 //   // Manipulasi property
 // // $barang1->namaBarang = 'Shampoo';
 // // $barang1->hargaBarang = 7_000;
 // // $barang1->stokBarang = 100;
 
+        /* Setter & Getter */
 //   // Mengakses Method Setter
 // $barang1->setNamaBarang('Motherboard');
 // $barang1->setHargaBarang(550_000);
@@ -116,14 +121,14 @@ require_once '../class/Processor.php';
 
 
 
+      /* Inheritance */
+      /* Overriding & Overloading */
 $key1 = new Keyboard('Vortex Seies VX7', 1_000_000, 97, 'RGB', 87, 'Outemu Blue');
 $key2 = new Keyboard('Keychron K2', 1_200_000, 27, 'RGB', 84, 'Gateron Brown');
 $key3 = new Keyboard('Rexus Daxa M84 Pro', 1_500_000, 11, 'RGB', 97, 'Gateron Red');
 $key1->cetakInfoBarang(); # Nama Barang : Vortex Seies VX7. Harga Barang : Rp. 1000000,00. Stok Barang : 97 pcs.
 $key2->cetakInfoBarang(); # Nama Barang : Keychron K2. Harga Barang : Rp. 1200000,00. Stok Barang : 27 pcs.
 $key3->cetakInfoBarang(); # Nama Barang : Rexus Daxa M84 Pro. Harga Barang : Rp. 1500000,00. Stok Barang : 11 pcs.
-
-
 
 $proc1 = new Processor('AMD Ryzen 5 3600', 3_000_000, 24, 3.6, 4.2);
 $proc2 = new Processor('Intel Core i5 10400', 2_400_000, 15, 2.9, 4.3);

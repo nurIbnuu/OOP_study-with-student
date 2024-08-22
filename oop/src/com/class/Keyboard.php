@@ -13,9 +13,10 @@ class Keyboard extends Barang
   public function __construct(string $namaBarang, int $hargaBarang, int $stokBarang, string $backlight, int $banyakKeys, string $tipeSwitch)
   {
     // echo 'oke';
-    $this->namaBarang = $namaBarang;
-    $this->hargaBarang = $hargaBarang;
-    $this->stokBarang = $stokBarang;
+
+    // Override
+    parent::__construct($namaBarang, $hargaBarang, $stokBarang);
+
     $this->backlight = $backlight;
     $this->banyakKeys = $banyakKeys;
     $this->tipeSwitch = $tipeSwitch;
@@ -47,6 +48,14 @@ class Keyboard extends Barang
   public function getTipeSwitch() : string
   {
     return $this->tipeSwitch;
+  }
+
+
+
+  // Method Overriding
+  public function cetakInfoBarang(): void
+  {
+    echo parent::cetakInfoBarang() . "Backlight : {$this->backlight}\nBanyak Keys : {$this->banyakKeys}\nTipe Switch : {$this->tipeSwitch}\n\n";
   }
 
 

@@ -13,9 +13,10 @@ class Processor extends Barang
   public function __construct(string $namaBarang, int $hargaBarang, int $stokBarang, float $frekuensiDasar, float $turboBoost)
   {
     // echo 'ok';
-    $this->namaBarang = $namaBarang;
-    $this->hargaBarang = $hargaBarang;
-    $this->stokBarang = $stokBarang;
+
+    // Override; menghindari duplikasi kode
+    parent::__construct($namaBarang, $hargaBarang, $stokBarang);
+
     $this->frekuensiDasar = $frekuensiDasar;
     $this->turboBoost = $turboBoost;
   }
@@ -38,5 +39,12 @@ class Processor extends Barang
   {
     return $this->turboBoost;
   }
+
+
+    // Method Overriding
+    public function cetakInfoBarang(): void
+    {
+      echo parent::cetakInfoBarang() . "Frekuensi Dasar : {$this->frekuensiDasar}\nTurbo Boost : {$this->turboBoost}\n\n";
+    }
 
 }

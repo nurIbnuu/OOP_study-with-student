@@ -3,6 +3,7 @@
 // Penjualan Sederhana
 
 // class Barang
+        /* Class & Method */
 class Barang
 {
     // Property/Attribute
@@ -14,6 +15,19 @@ class Barang
     // Method/Behavior
 
     // Constructor
+  // Overloading
+  // public function __construct()
+  // {
+  // }
+  // public function __construct(string $inputNama)
+  // {
+  //   $this->namaBarang = $inputNama;
+  // }
+  // public function __construct(string $inputNama, int $inputHarga)
+  // {
+  //   $this->namaBarang = $inputNama;
+  //   $this->hargaBarang = $inputHarga;
+  // }
   public function __construct(string $inputNama = 'Tidak ada nama', int $inputHarga = 0, int $inputStok = 0)
   {
     // echo "Berhasil instansiasi Object Barang\n";
@@ -28,6 +42,13 @@ class Barang
   //   // echo "Terima Kasih. Program selesai\n";
   // }
 
+  // Overloading
+  // public function tambahStok() : void
+  // {
+  // $this->stokBarang += 1;
+
+  // echo "Stok barang berhasil ditambah. \nStok barang = {$this->stokBarang}" . PHP_EOL;
+  // }
   public function tambahStok(int $jmlTambah) : void
   {
   $this->stokBarang += $jmlTambah;
@@ -35,6 +56,13 @@ class Barang
   echo "Stok barang berhasil ditambah. \nStok barang = {$this->stokBarang}" . PHP_EOL;
   }
 
+
+  // public function kurangiStok() : void
+  // {
+  //   $this->stokBarang -= 1;
+
+  //   echo "Stok barang berhasil dikurang. \nStok barang = {$this->stokBarang}" . PHP_EOL;
+  // }
   public function kurangiStok(int $jmlKurang) : void
   {
     $this->stokBarang -= $jmlKurang;
@@ -42,21 +70,51 @@ class Barang
     echo "Stok barang berhasil dikurang. \nStok barang = {$this->stokBarang}" . PHP_EOL;
   }
 
-  public function cekStok() : bool
+
+  // Overloading
+  // Masih ada stok barang?
+  // public function cekStok() : bool
+  // {
+  //   if($this->stokBarang > 0)
+  //   {
+  //     return true;
+  //   }
+  //   else
+  //   {
+  //     return false;
+  //   }
+  // }
+  public function cekStok(bool $status) : bool
   {
-    if($this->stokBarang > 0)
+    if($status)
     {
-      return true;
+      // stok barang masih kan?
+      if($this->stokBarang > 0)
+      {
+        return true;
+      }
+      else
+      {
+        return false;
+      }
     }
     else
     {
-      return false;
+      // stok barang udah habis kan?
+      if($this->stokBarang > 0)
+      {
+        return false;
+      }
+      else
+      {
+        return true;
+      }
     }
   }
 
   public function cetakInfoBarang() : void
   {
-    echo "Nama Barang : {$this->namaBarang}\nHarga Barang : Rp. {$this->hargaBarang},00\nStok Barang : {$this->stokBarang} pcs\n\n";
+    echo "Nama Barang : {$this->namaBarang}\nHarga Barang : Rp. {$this->hargaBarang},00\nStok Barang : {$this->stokBarang} pcs\n";
   }
 
     // Method Setter; tidak mengembalikan nilai/void karena hanya mengeset data
