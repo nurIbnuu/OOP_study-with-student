@@ -8,6 +8,13 @@ class Processor extends Barang
   private   $frekuensiDasar = 0,
             $turboBoost = 0;
 
+  
+  // implementasi method abstract
+  public function jenisBarang(): void
+  {
+    echo "Ini Processor\n";
+  }
+
 
   // Method Construct
   public function __construct(string $namaBarang, int $hargaBarang, int $stokBarang, float $frekuensiDasar, float $turboBoost)

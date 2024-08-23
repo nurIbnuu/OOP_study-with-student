@@ -4,7 +4,7 @@
 
 // class Barang
         /* Class & Method */
-class Barang
+abstract class Barang
 {
     // Property/Attribute
     // Property dulu baru Method
@@ -14,6 +14,10 @@ class Barang
 
 
     // Method/Behavior
+
+    // method abstract> method cunstructor> method wajid> method setter getter
+      // Minimal 1 method abstract
+    public abstract function jenisBarang() : void;
 
     // Constructor
   // Overloading
@@ -29,7 +33,7 @@ class Barang
   //   $this->namaBarang = $inputNama;
   //   $this->hargaBarang = $inputHarga;
   // }
-  protected function __construct(string $inputNama = 'Tidak ada nama', int $inputHarga = 0, int $inputStok = 0)
+  public function __construct(string $inputNama = 'Tidak ada nama', int $inputHarga = 0, int $inputStok = 0)
   {
     // echo "Berhasil instansiasi Object Barang\n";
     $this->namaBarang = $inputNama;
@@ -52,7 +56,7 @@ class Barang
 
   // echo "Stok barang berhasil ditambah. \nStok barang = {$this->stokBarang}" . PHP_EOL;
   // }
-  protected function tambahStok(int $jmlTambah) : void
+  public function tambahStok(int $jmlTambah) : void
   {
     $this->stokBarang += $jmlTambah;
 
@@ -66,7 +70,7 @@ class Barang
 
   //   echo "Stok barang berhasil dikurang. \nStok barang = {$this->stokBarang}" . PHP_EOL;
   // }
-  protected function kurangiStok(int $jmlKurang) : void
+  public function kurangiStok(int $jmlKurang) : void
   {
     $this->stokBarang -= $jmlKurang;
 
@@ -87,7 +91,7 @@ class Barang
   //     return false;
   //   }
   // }
-  protected function cekStok(bool $status) : bool
+  public function cekStok(bool $status) : bool
   {
     if($status)
     {
@@ -121,40 +125,40 @@ class Barang
   //   $this->tambahStok();
   // }
 
-  protected function cetakInfoBarang() : void
+  public function cetakInfoBarang() : void
   {
     echo "Nama Barang : {$this->namaBarang}\nHarga Barang : Rp. {$this->hargaBarang},00\nStok Barang : {$this->stokBarang} pcs\n";
   }
 
     // Method Setter; tidak mengembalikan nilai/void karena hanya mengeset data
-  protected function setNamaBarang(string $namaBarang) : void
+  public function setNamaBarang(string $namaBarang) : void
   {
     $this->namaBarang = $namaBarang;
   }
 
-  protected function setHargaBarang(int $hargaBarang) : void
+  public function setHargaBarang(int $hargaBarang) : void
   {
     $this->hargaBarang = $hargaBarang;
   }
 
-  protected function setStokBarang(int $stokBarang) : void
+  public function setStokBarang(int $stokBarang) : void
   {
     $this->stokBarang = $stokBarang;
   }
 
 
     // Method Getter; mengembalikan nilai/return
-  protected function getNamaBarang() : string
+  public function getNamaBarang() : string
   {
     return $this->namaBarang;
   }
 
-  protected function getHargaBarang() : int
+  public function getHargaBarang() : int
   {
     return $this->hargaBarang;
   }
 
-  protected function getStokBarang() : int
+  public function getStokBarang() : int
   {
     return $this->stokBarang;
   }

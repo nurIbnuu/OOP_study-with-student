@@ -153,3 +153,15 @@ $proc2 = new Processor('Intel Core i5 10400', 2_400_000, 15, 2.9, 4.3);
 
 // Jika kelas Barang(induk) tidak akan diinstansiasi maka jadikan 'protected'
 // $key1->Set('Kopi');
+
+
+
+
+
+      /* Abstraksi */
+// $brg = new Barang();
+// $key1->setNamaBarang('aaa');
+// Barang tidak boleh diinstansiasi hanya untuk template
+// $t = new Barang(); Cannot instantiate abstract class Barang
+$key1->jenisBarang();
+$proc1->jenisBarang();

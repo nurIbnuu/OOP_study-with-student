@@ -9,6 +9,12 @@ class Keyboard extends Barang
             $banyakKeys = 0,
             $tipeSwitch = 'Tidak ada switch';
 
+  // implementasi method abstract
+  public function jenisBarang(): void
+  {
+    echo "Ini Keyboard\n";
+  }
+
   // Method Construct
   public function __construct(string $namaBarang, int $hargaBarang, int $stokBarang, string $backlight, int $banyakKeys, string $tipeSwitch)
   {
