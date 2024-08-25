@@ -5,6 +5,7 @@ require_once '../class/Penjual.php';
 require_once '../class/Pembeli.php';
 require_once '../class/Keyboard.php';
 require_once '../class/Processor.php';
+require_once '../class/Transaksi.php';
 
   // Mengakses property yang di dalam class
     # $this->namaProperty
@@ -54,7 +55,7 @@ require_once '../class/Processor.php';
 
 
   // Instansiasi Object Penjual
-// $penjual1 = new Penjual('Udin', 21, 'Laki-laki', 2);
+$penjual1 = new Penjual('Udin', 21, 'Laki-laki', 2);
 // $penjual1->cetakInfoPenjual();
 // $penjual1->nama = 'Udin';
 // $penjual1->umur = 21;
@@ -79,7 +80,7 @@ require_once '../class/Processor.php';
 // // $penjual1->cetakInfoPenjual(); # Nama Penjual : Udin. Umur Penjual : 21 tahun. Jenis Kelamin : Laki-laki. Lama Kerja. Pertahun : 2 tahun.
 
 //   // Instansiasi Object Pemebeli
-// $pembeli1 = new Pembeli('Siti', 19, 'Perempuan', '085 866 473 946', 'Kulon Progo');
+$pembeli1 = new Pembeli('Siti', 19, 'Perempuan', '085 866 473 946', 'Kulon Progo');
 // $pembeli1->cetakInfoPembeli();
 // $pembeli1->nama = 'Siti';
 // $pembeli1->umur = 19;
@@ -163,5 +164,51 @@ $proc2 = new Processor('Intel Core i5 10400', 2_400_000, 15, 2.9, 4.3);
 // $key1->setNamaBarang('aaa');
 // Barang tidak boleh diinstansiasi hanya untuk template
 // $t = new Barang(); Cannot instantiate abstract class Barang
-$key1->jenisBarang();
-$proc1->jenisBarang();
+// $key1->jenisBarang();
+// $proc1->jenisBarang();
+
+// $penjual1 = new Penjual('Udin', 21, 'Laki-laki', 99);
+// $penjual1->cetakInfoUser();
+
+// $pembeli1 = new Pembeli('Siti', 19, 'Perempuan', '085 866 473 946', 'Kulon Progo');
+// $pembeli1->cetakInfoUser();
+
+
+$trs1 = new Transaksi($penjual1, $pembeli1, $key1, 7);
+echo PHP_EOL;
+$trs2 = new Transaksi($penjual1, $pembeli1, $proc2, 5);
+echo PHP_EOL;
+
+// Penjual : Udin
+// Pembeli : Siti
+// Barang : Vortex Seies VX7
+// Jenis Barang : Keyboard
+// Jumlah Pembelian : 2 pcs
+// Harga per pcs : Rp. 1000000,00
+// Harga Total : Rp. 2000000,00
+// Stok Barang Sebelum Pembelian : 97 pcs
+// Stok Barang Setelah Pembelian : 95 pcs
+
+// Penjual : Udin
+// Pembeli : Siti
+// Barang : Intel Core i5 10400
+// Jenis Barang : Processor
+// Jumlah Pembelian : 2 pcs
+// Harga per pcs : Rp. 2400000,00
+// Harga Total : Rp. 4800000,00
+// Stok Barang Sebelum Pembelian : 15 pcs
+// Stok Barang Setelah Pembelian : 13 pcs
+
+
+$proc1->cetakInfoBarang();
+echo PHP_EOL;
+$proc2->cetakInfoBarang();
+echo PHP_EOL;
+$key1->cetakInfoBarang();
+echo PHP_EOL;
+$key2->cetakInfoBarang();
+echo PHP_EOL;
+$pembeli1->cetakInfoUser();
+echo PHP_EOL;
+$penjual1->cetakInfoUser();
+echo PHP_EOL;
